@@ -57,5 +57,5 @@ app.use("/photos", express.static(path.join(__dirname, "uploads")));
 
 // handle invalid routes
 app.get("*", (req, res) => {
-  res.redirect("http://localhost:3000");
+  res.redirect("https://itsmyitmart.store");
 });
