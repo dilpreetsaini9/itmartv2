@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 
 // Route for serving index.html at the "/admin" URL
 app.get("/admin", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/admin", "index.html"));
+  res.sendFile(path.join(__dirname, "public/app", "index.html"));
 });
 
 // all routes
