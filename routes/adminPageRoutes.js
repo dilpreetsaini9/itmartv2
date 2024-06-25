@@ -1,32 +1,39 @@
-import express from "express";
-import bodyParser from "body-parser";
+// import express from "express";
+// import { pool } from "../db/database.js";
 
+// export const admin = express.Router();
 
+// admin.get("/pendingorders", async (req, res) => {
+//   console.log("req come");
+//   const command = `SELECT * FROM orders WHERE order_status='placed'`;
+//   let [fetchingPendingProducts] = await pool.query(command);
+//   res.send(fetchingPendingProducts);
+// });
+// admin.get("/pendingorderdetail", async (req, res) => {
+//   let id = req.query.id;
+//   console.log("req come");
+//   const command = `SELECT
+//   p.id AS product_id,
+//   p.productName,
+//   p.price
 
-import { processPayment, updateViaStripe } from "../controllers/payment.js";
-import { VerifyJWTController, VerifyProfileController, adminAuthController, adminPassChangeController, postLoginController, postSignupController ,  } from "../controllers/Auth.js";
-import { getAdminProductController } from "../controllers/product.js";
-
-export const admin = express.Router()
-
-// get mothods of main routes
-admin.get('/products', getAdminProductController)
-admin.post('/login', express.json(),adminAuthController)
-admin.post('/changepassword', express.json(), adminPassChangeController)
-// api.get('/product/:productid', getSingleProductController)
-// api.get('/count', countController)
-
-// // verift jwt 
-// api.post('/verify', VerifyJWTController)
-// api.post('/profile', VerifyProfileController)
-
-// // post methods of main routes
-// api.post('/signup', express.json(), postSignupController)
-// api.post('/login', express.json(), postLoginController)
-
-// // ADMIN PANEL ( CURRENTY NOT WORKING )
-// // api.post('/products', upload.single("file"), postProductController)
-
-// // stripe
-// api.post('/creategateway', express.json(), processPayment)
-// api.post('/updateUserOrders', bodyParser.raw({ type: 'application/json' }), updateViaStripe)
+// FROM
+//   order_items oi
+// JOIN
+//   products p ON oi.product_id = p.id
+// WHERE
+//   oi.order_id = ?;`;
+//   let [fetchingPendingProducts] = await pool.query(command, [id]);
+//   console.log(fetchingPendingProducts);
+//   res.send(fetchingPendingProducts);
+// });
+// // secure this  route
+// admin.post("/updateorder", express.json(), async (req, res) => {
+//   let id = req.body.id;
+//   let command = `update orders
+// set order_status = "preparing to dispatch"
+// where id = ?`;
+//   let [updated] = await pool.query(command, [id]);
+//   console.log(updated);
+//   res.send("order updated");
+// });
